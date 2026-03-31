@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kore Power Solutions | Products</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a href="index.html" class="logo"><span class="logo-k">Kore</span> Power Solutions</a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <p class="eyebrow">Products</p>
+                <h1>Medium Voltage Pad-Mounted Transformers</h1>
+                <p class="page-subheadline">
+                    Oil-filled, fully assembled transformers built for U.S. applications.
+                </p>
+            </div>
+        </section>
+
+        <section class="section section-white">
+            <div class="container">
+
+                <div class="slideshow">
+
+                    <div class="slides fade">
+                        <img src="images/Transformer.jpg" alt="Pad-mounted transformer installed on site" />
+                    </div>
+
+                    <div class="slides fade active-slide">
+                        <img src="images/Outside stock photo.jpg" alt="Pad-mounted transformer front view" />
+                    </div>
+
+                    <div class="slides fade">
+                        <img src="images/Outside Stock photo 2.jpg" alt="Pad-mounted transformer side view" />
+                    </div>
+                    <button class="slide-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+                    <button class="slide-btn next" onclick="changeSlide(1)">&#10095;</button>
+
+                    <div class="slide-dots">
+                        <span class="dot active-dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-light">
+            <div class="container">
+                <div class="products-grid">
+                    <div class="card">
+                        <h3>Specifications</h3>
+                        <ul class="list">
+                            <li><strong>Voltage Class:</strong> Up to 34.5 kV (15 / 25 / 35 kV typical)</li>
+                            <li><strong>Capacity Range:</strong> 300 kVA - 5,000 kVA</li>
+                            <li><strong>Configuration:</strong> Loop feed or radial</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Standards</h3>
+                        <ul class="list">
+                            <li>ANSI/IEEE (C57 series)</li>
+                            <li>UL listed</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Applications</h3>
+                        <ul class="list">
+                            <li>Utilities</li>
+                            <li>Commercial buildings</li>
+                            <li>Data centers</li>
+                            <li>Renewable energy</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Key Benefits</h3>
+                        <ul class="list">
+                            <li>Fully assembled</li>
+                            <li>Proven manufacturing since 1984</li>
+                            <li>Tested by U.S. engineers</li>
+                            <li>4-month delivery</li>
+                            <li>Custom projects available</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-white">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Why this product</p>
+                    <h2>Built for faster deployment</h2>
+                </div>
+
+                <div class="two-column">
+                    <div class="card">
+                        <h3>Ready to Install</h3>
+                        <p>
+                            Fully assembled units reduce jobsite delays and simplify coordination.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Certified for U.S. Use</h3>
+                        <p>
+                            Units are UL listed and built to ANSI/IEEE standards for dependable use in U.S. projects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Kore Power Solutions. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            const slides = document.getElementsByClassName("slides");
+            const dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                slides[i].classList.remove("active-slide");
+            }
+
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active-dot");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            slides[slideIndex - 1].classList.add("active-slide");
+            dots[slideIndex - 1].classList.add("active-dot");
+        }
+
+        setInterval(function () {
+            changeSlide(1);
+        }, 5000);
+    </script>
+</body>
+</html>
