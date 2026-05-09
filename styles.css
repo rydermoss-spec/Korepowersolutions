@@ -72,26 +72,24 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
-    padding: 18px 0;
+    gap: 20px;
+    padding: 8px 0;
     flex-wrap: wrap;
-    width: min( 95%);
+    width: min(1200px, 96%);
     margin: 0 auto;
 }
 
-.nav img {
-    height: 100px;
-    width: auto;
-}
-
 .logo {
-    font-size: 50px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+    flex: 0 0 auto;
 }
 
-.logo-k {
-    color: var(--primary-red);
+.logo-image {
+    width: 300px;
+    height: auto;
+    max-width: none;
 }
 
 
@@ -105,11 +103,24 @@ a {
 .nav-links a {
     color: var(--white);
     font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
     transition: 0.2s ease;
 }
 
 .nav-links a:hover {
     color: #dbe8ff;
+}
+
+.nav-links a.active {
+    color: var(--primary-red);
+    background: var(--white);
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+}
+
+.nav-links a.active:hover {
+    color: var(--primary-red);
 }
 
 .btn {
@@ -216,6 +227,22 @@ a {
 
 .hero-card li {
     margin-bottom: 10px;
+    color: #f2f6fb;
+}
+
+.section-white .hero-card {
+    margin-top: 34px;
+    background: var(--primary-blue);
+    color: var(--white);
+    border-color: rgba(10, 49, 97, 0.14);
+    box-shadow: var(--shadow-medium);
+}
+
+.section-white .hero-card h3 {
+    color: var(--white);
+}
+
+.section-white .hero-card li {
     color: #f2f6fb;
 }
 
@@ -475,6 +502,12 @@ a {
     .nav {
         flex-direction: column;
         align-items: flex-start;
+        gap: 14px;
+        padding: 10px 0;
+    }
+
+    .logo-image {
+        width: min(260px, 88vw);
     }
 
     .nav-links {
@@ -743,6 +776,18 @@ a {
     color: var(--text-muted);
     margin-bottom: 18px;
     font-size: 1.02rem;
+}
+
+.section-dark .about-story-text .eyebrow {
+    color: #ffb3c0;
+}
+
+.section-dark .about-story-text h2 {
+    color: var(--white);
+}
+
+.section-dark .about-story-text p {
+    color: #edf3fb;
 }
 
 .about-story-panel {
