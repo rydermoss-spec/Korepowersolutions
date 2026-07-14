@@ -33,10 +33,16 @@
             </div>
         </section>
 
-        <section class="section section-light">
+        <section class="section section-light contact-section">
             <div class="container">
                 <div class="contact-grid">
-                    <form class="quote-form" action="https://formspree.io/f/xlgaewnk" method="POST">
+                    <div class="contact-main">
+                    <form class="quote-form quote-card" action="https://formspree.io/f/xlgaewnk" method="POST">
+                    <div class="form-heading">
+                        <p class="eyebrow">Request</p>
+                        <h2>Request a Quote</h2>
+                        <p>Send the basics and we will follow up with the right technical questions.</p>
+                    </div>
     
                     <!-- Redirect after submit -->
                 <input type="hidden" name="_next" value="thank-you.html">
@@ -68,19 +74,7 @@
     <div class="form-row">
         <div class="form-group">
             <label for="projectType">Project Type</label>
-            <input type="text" id="projectType" name="projectType" placeholder="Project type" />
-        </div>
-
-        <div class="form-group">
-            <label for="quantity">Quantity</label>
-            <input type="text" id="quantity" name="quantity" placeholder="Quantity needed" />
-        </div>
-    </div>
-
-    <div class="form-row">
-        <div class="form-group">
-            <label for="timeline">Timeline</label>
-            <input type="text" id="timeline" name="timeline" placeholder="Needed by" />
+            <input type="text" id="projectType" name="projectType" placeholder="e.g., Utility, Commercial Construction, Line Job" />
         </div>
 
         <div class="form-group">
@@ -90,36 +84,49 @@
     </div>
 
     <div class="form-group">
-        <label for="notes">Notes</label>
-        <textarea id="notes" name="notes" rows="6" placeholder="Project details, specs, or questions"></textarea>
+        <label for="notes">Notes / Project Details</label>
+        <textarea id="notes" name="notes" rows="6" placeholder="e.g., kVA capacity, Pad or Pole mount, voltage requirements, or custom specs"></textarea>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit Request</button>
     </form>
 
-
-                    <div class="contact-info">
-                        <div class="card">
+                        <div class="card direct-contact-card">
                             <h3>Direct Contact</h3>
                             <p><strong>Benjamin Crockett</strong></p>
                             <p><a href="mailto:Ben@korepowersolutions.com">Ben@korepowersolutions.com</a></p>
                             <p><a href="tel:8014049438">801-404-9438</a></p>
                             <p>Utah</p>
                         </div>
+                    </div>
+
+                    <div class="contact-info contact-sidebar">
 
                         <div class="card">
-                            <h3>Logistics</h3>
+                            <h3>Our Location &amp; Handoff</h3>
                             <p>
-                                Transformers are shipped via ocean freight to California, then delivered by truck.
+                                Based right here in Utah. While our world-class manufacturers handle 100% of
+                                the overseas transit directly to your destination, our local team takes the reins
+                                the exact moment the unit arrives at your site for a seamless final handoff.
                             </p>
                         </div>
 
-                        <div class="card callout">
+                        <div class="card callout commitment-card">
+                            <h3>Our Commitment</h3>
+                            <p>
+                                <strong>No Order Too Small, No City Too Remote.</strong> We don't prioritize
+                                clients based on the size of their budget. Whether you need a single pole-mount
+                                replacement or a few pad-mount units for a local upgrade, our team ensures your
+                                community gets top-tier equipment without the big-city bureaucratic delays.
+                            </p>
+                        </div>
+
+                        <div class="card callout message-card">
                             <h3>Key Messages</h3>
                             <ul class="list">
-                                <li>We deliver faster</li>
-                                <li>We simplify the process</li>
-                                <li>We are reliable and certified</li>
+                                <li><strong>Elite Lead Times:</strong> Delivered to your site in as little as 4 months compared to the 30-45 week industry average.</li>
+                                <li><strong>Seamless Logistics:</strong> The manufacturer handles the transit details end-to-end until it hits your location.</li>
+                                <li><strong>Fully Certified:</strong> Strictly UL listed and ANSI/IEEE compliant for reliable domestic grid use.</li>
                             </ul>
                         </div>
                     </div>
