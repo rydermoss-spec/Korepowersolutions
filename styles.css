@@ -159,7 +159,7 @@ a {
 .hero {
     background:
         linear-gradient(90deg, rgba(10, 49, 97, 0.96) 0%, rgba(10, 49, 97, 0.88) 48%, rgba(0, 52, 120, 0.74) 100%),
-        url("Images/outdoorInstall.JPG") center right / cover;
+        url("Images/transformersinfactory.jpeg") center 58% / cover;
     color: var(--white);
     padding: 96px 0 92px;
     position: relative;
@@ -728,12 +728,16 @@ a {
 
 .slideshow {
     position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    border-radius: 14px;
+    width: 100%;
     overflow: hidden;
-    box-shadow: var(--shadow-medium);
-    background: #e9eef5;
+    background: #071b35;
+}
+
+.product-slideshow-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .slides {
@@ -743,8 +747,9 @@ a {
 
 .slides img {
     width: 100%;
-    height: 500px;
-    object-fit: cover;
+    height: clamp(620px, 78vh, 920px);
+    object-fit: contain;
+    object-position: center;
     display: block;
 }
 
@@ -816,7 +821,7 @@ a {
 
 @media (max-width: 700px) {
     .slides img {
-        height: 280px;
+        height: clamp(460px, 72vh, 680px);
     }
 
     .slide-btn {
@@ -838,7 +843,7 @@ a {
 .page-hero {
     background:
         linear-gradient(90deg, rgba(10, 49, 97, 0.96) 0%, rgba(10, 49, 97, 0.86) 46%, rgba(0, 52, 120, 0.72) 100%),
-        url("Images/outdoorInstall.JPG") center right / cover;
+        url("Images/transformersinfactory.jpeg") center center / cover;
     color: var(--white);
     min-height: 360px;
     padding: 96px 0 112px;
@@ -901,6 +906,35 @@ a {
 
 .factory-section {
     border-bottom: 1px solid #e4ebf4;
+}
+
+.team-section {
+    padding-top: 64px;
+    padding-bottom: 72px;
+}
+
+.team-photo {
+    max-width: 980px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: var(--shadow-medium);
+}
+
+.team-photo img {
+    display: block;
+    width: 100%;
+    max-height: 620px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.team-photo figcaption {
+    padding: 16px 22px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-align: center;
 }
 
 .factory-grid {
@@ -999,43 +1033,46 @@ a {
 
 .about-feature-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-top: 1px solid #dce5f1;
+    border-left: 1px solid #dce5f1;
 }
 
 .about-feature-card {
-    background: var(--white);
-    border-radius: 14px;
-    padding: 26px;
-    box-shadow: var(--shadow-light);
-    border-top: 4px solid var(--primary-red);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: grid;
+    grid-template-columns: 82px 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 24px;
+    background: transparent;
+    padding: 36px 34px;
+    border-right: 1px solid #dce5f1;
+    border-bottom: 1px solid #dce5f1;
+    transition: background 0.2s ease;
 }
 
 .about-feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+    background: #f7faff;
 }
 
 .feature-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-red), var(--accent-red));
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    margin-bottom: 18px;
+    grid-row: 1 / 3;
+    color: var(--primary-red);
+    font-size: 3.4rem;
+    line-height: 0.9;
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    border-right: 3px solid var(--primary-red);
 }
 
 .about-feature-card h3 {
+    grid-column: 2;
     margin-bottom: 12px;
     color: var(--primary-blue);
 }
 
 .about-feature-card p {
+    grid-column: 2;
     color: var(--text-body);
 }
 
@@ -1088,31 +1125,44 @@ a {
 }
 
 .about-timeline {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    margin-top: 26px;
+    gap: 30px;
+    margin-top: 42px;
+}
+
+.about-timeline::before {
+    content: "";
+    position: absolute;
+    top: 27px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-red), #ffffff, var(--primary-red));
+    opacity: 0.55;
 }
 
 .timeline-card {
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    padding: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    text-align: left;
+    position: relative;
+    z-index: 1;
+    padding: 0 12px;
+    text-align: center;
 }
 
 .timeline-step {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     background: var(--primary-red);
     color: var(--white);
     font-weight: 700;
-    margin-bottom: 14px;
+    border: 5px solid var(--primary-blue);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75);
+    margin-bottom: 22px;
 }
 
 .timeline-card h3 {
@@ -1122,6 +1172,7 @@ a {
 
 .timeline-card p {
     color: #e5edf8;
+    font-size: 0.96rem;
 }
 
 .advantage-heading {
@@ -1232,6 +1283,16 @@ a {
 }
 
 @media (max-width: 1024px) {
+    .about-timeline::before {
+        display: none;
+    }
+
+    .timeline-card {
+        padding: 24px 18px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 12px;
+    }
+
     .about-intro-grid,
     .factory-grid,
     .about-story-grid,
@@ -1316,6 +1377,15 @@ a {
     .value-card,
     .quote-card {
         padding: 22px;
+    }
+
+    .about-feature-card {
+        grid-template-columns: 58px 1fr;
+        column-gap: 16px;
+    }
+
+    .feature-icon {
+        font-size: 2.6rem;
     }
 
     .about-intro-card h2,
